@@ -31,7 +31,7 @@ class ContactController extends Controller
             ],
             function ($message) {
                 $message->from('noreply@marksuth.dev');
-                $message->to('ms@marksuth.uk', 'Mark Sutherland')
+                $message->to('mark@marksuth.dev', 'Mark Sutherland')
                     ->subject('New Website Enquiry');
             }
         );
