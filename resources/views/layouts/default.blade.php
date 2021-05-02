@@ -23,7 +23,7 @@
     <meta name="twitter:image" content="{{ env('APP_URL')}}/images/@yield('ogimg', 'marksuth-og.jpg')" />
     <meta name="twitter:creator" content="@marksuth" />
 
-    <title>@yield('title') Mark Sutherland</title>
+    <title>Mark Sutherland -@yield('title')</title>
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     @yield('extrastyles')
 
