@@ -24,6 +24,3 @@ Route::get('/', function () {
 Route::get('/contact', function () {
     return view('contact');
 });
-
-// Route::get('/contact', 'App\Http\Controllers\ContactController@show');
-// Route::post('/contact', 'App\Http\Controllers\ContactController@contactPost');
