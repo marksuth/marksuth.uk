@@ -1,0 +1,67 @@
+baseURL = "https://marksuth.dev"
+languageCode = "en-gb"
+title = "Mark Sutherland"
+theme = "cooper"
+
+[taxonomies]
+  tag = "tags"
+
+[permalinks]
+  post = "/:filename/"
+
+[params]
+  description = "Web Developer, Designer & Digital Creative"
+  contentBackgroundColor = "#214154"
+  contentTextColor = "#ffffff"
+  contentLinkColor = "#ffffff"
+  contentLinkHoverColor = "#4F83A1"
+  navbarBackgroundColor = "#214154"
+  navbarLinkColor = "rgba(255, 255, 255, 0.75)"
+  navbarLinkHoverColor = "rgba(255, 255, 255, 1)"
+  wrapperMaxWidth = "800px"
+  customDateFormat = "Jan 2, 2006"
+  customCodeStyle = true
+  customBlockquoteStyle = true
+  showPostSummary = true
+  cookieConsent = false
+  includeBootstrapJs = false
+  faviconSafariPinnedTabColor = "#214154"
+  faviconMsApplicationTileColor = "#214154"
+  faviconThemeColor = "#214154"
+
+[menu]
+  [[menu.nav]]
+  name = "Home"
+  url = "/"
+  weight = 1
+
+[markup]
+  defaultMarkdownHandler = "goldmark"
+  [markup.goldmark]
+    [markup.goldmark.extensions]
+      definitionList = true
+      footnote = true
+      linkify = true
+      strikethrough = true
+      table = true
+      taskList = true
+      typographer = true
+    [markup.goldmark.parser]
+      attribute = true
+      autoHeadingID = true
+    [markup.goldmark.renderer]
+      hardWraps = false
+      unsafe = true
+      xHTML = false
+  [markup.highlight]
+    codeFences = true
+    hl_Lines = ""
+    lineNoStart = 1
+    lineNos = false
+    lineNumbersInTable = true
+    noClasses = true
+    style = "monokai"
+    tabWidth = 4
+  [markup.tableOfContents]
+    endLevel = 6
+    startLevel = 2

@@ -1,0 +1,41 @@
+{{- define "main" -}}
+
+{{ $homepage := "Home" }}
+{{ with .Site.Menus.nav }}
+  {{ range first 1 . }}
+    {{ $homepage = .Name }}
+  {{ end }}
+{{ end }}
+{{ if .IsHome }}
+<div class="home">
+<h1>Mark Sutherland</h1>
+    <p>Web Designer, Developer & Digital Creative</p>
+<ul class="nav nav-pills">
+  <li class="nav-item"><a data-hint="Twitter" class="nav-link" href="https://twitter.com/marksuth" rel="me noopener">Twitter</a></li>
+  <li class="nav-item"><a data-hint="Github" class="nav-link" href="https://github.com/marksuth" rel="me noopener">Github</a></li>
+  <li class="nav-item"><a data-hint="email" class="nav-link" href="mailto:mark@marksuth.dev" rel="me">Email</a></li>
+</ul>
+</div>
+    {{ end }}
+<div class="row justify-content-center">
+  <div class="col-md-8">
+{{ $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}
+{{ range $pages.ByPublishDate.Reverse }}
+  <div class="card mx-5">
+    <div class="card-body text-dark">
+    <a href="{{ .Permalink }}" class="text-dark"><h3>{{ .Title | markdownify }}</h3></a>
+    {{ $customDateFormat := "2 January 2006" }}
+    {{ with .Site.Params.customDateFormat }}{{ $customDateFormat = . }}{{ end }}
+    <br>
+    <small class="text-secondary">{{ .PublishDate.Format $customDateFormat }}</small>
+    {{ partial "tags" . }}
+    {{ if eq .Site.Params.showPostSummary true }}
+    <br>
+    {{ .Summary }}
+    {{ end }}
+  </div>
+  </div>
+{{ end }}
+</div>
+</div>
+{{- end -}}
