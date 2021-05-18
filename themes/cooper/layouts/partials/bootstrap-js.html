@@ -1,0 +1,4 @@
+{{ if eq .Site.Params.includeBootstrapJs true}}
+{{ $bootstrapJs := "js/bootstrap.bundle.min.js" -}}
+<script src="{{ $bootstrapJs | absURL }}"></script>
+{{ end }}

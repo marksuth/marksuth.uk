@@ -1,0 +1,15 @@
+.home {
+    padding-top: 20vh;
+    padding-bottom:20vh;
+  & h1 {
+    font-size: 10vh;
+    margin: 0;
+    padding: 0.5vh;
+    line-height: 1;
+    font-weight: 800;
+  }
+  & p {
+    font-size: 3vh;
+    line-height: 1.5;
+  }
+}

@@ -1,0 +1,27 @@
+{{- define "main" -}}
+
+{{ $homepage := "Home" }}
+{{ with .Site.Menus.nav }}
+  {{ range first 1 . }}
+    {{ $homepage = .Name }}
+  {{ end }}
+{{ end }}
+<h1>{{ $homepage }}</h1>
+<h2>Mark Sutherland</h2>
+<p>Web Developer, Designer &amp; Digital Creative</p>
+
+{{ $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}
+{{ range $pages.ByPublishDate.Reverse }}
+  <p>
+    <a href="{{ .Permalink }}"><h2 class="p-0 m-0">{{ .Title | markdownify }}</h2></a>
+    {{ $customDateFormat := "January 2, 2006" }}
+    {{ with .Site.Params.customDateFormat }}{{ $customDateFormat = . }}{{ end }}
+    <small class="text-secondary">{{ .PublishDate.Format $customDateFormat }}</small>
+    {{ partial "tags" . }}
+    {{ if eq .Site.Params.showPostSummary true }}
+    {{ .Summary }}
+    {{ end }}
+  </p>
+{{ end }}
+
+{{- end -}}
