@@ -1,18 +1,32 @@
 .home {
-    padding-top: 20vh;
-    padding-bottom:20vh;
+  text-align: center;
+  padding-top: 5vh;
   & h1 {
-    font-size: 10vh;
+    font-size: 3rem;
     margin: 0;
     padding: 0.5vh;
     line-height: 1;
     font-weight: 800;
   }
   & p {
-    font-size: 3vh;
     line-height: 1.5;
+    font-size: 1.5rem;
   }
 }
+@media (min-width: 992px) { 
+  .home {
+    text-align: left;
+    padding-top: 20vh;
+    padding-bottom:20vh;
+& h1 {
+  font-size: 5rem;
+}
+& p {
+  font-size: 2.5rem;
+}
+  }
+}
+
 .avatar {
   border-radius: 50%;
 }
