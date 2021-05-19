@@ -17,10 +17,9 @@ mix.js('themes/cooper/resources/js/app.js', 'themes/cooper/static/js')
         autoprefixer: {
             options: {
                 browsers: [
-                    'Firefox >= 38',
-                    'Chrome >= 41',
-                    'Safari >= 9',
-                    'ie 11',
+                    'last 2 versions',
+                    ' > 0.1% ',
+                    'not ie <= 11',
                     'not dead',
                 ]
             }
