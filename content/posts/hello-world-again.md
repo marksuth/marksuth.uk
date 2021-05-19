@@ -1,7 +1,7 @@
 ---
 title: "Hello World Again"
 date: 2021-05-19T23:21:58+01:00
-draft: true
+draft: false
 tags: 
     - personal
 ---
