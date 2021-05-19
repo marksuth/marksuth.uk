@@ -1,6 +1,7 @@
 {{- define "main" -}}
 
-<h1 class="my-5">{{ .Title | markdownify }}</h1>
+<h1 class="mt-5 p-name">{{ .Title | markdownify }}</h1>
+<p>By <a class="p-author h-card" href="https://marksuth.dev">Mark Sutherland</a></p>
 {{ .Content }}
 
 {{- end -}}
