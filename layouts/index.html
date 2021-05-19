@@ -10,7 +10,7 @@
 <div class="home h-card ">
 <div class="row justify-content-center">
   <div class="col-md-3 col-6">
-    <img src="/avatar.jpg" alt="Mark Sutherland" class="avatar u-photo img-fluid">
+    <img src="/images/avatar.jpg" alt="Mark Sutherland" class="avatar u-photo img-fluid">
   </div>
   <div class="col-md-9">
 <h1 class="p-name pt-5 px-0 mx-0">Mark Sutherland</h1>
@@ -27,23 +27,22 @@
 </div>
 </div>
     {{ end }}
-<div class="row justify-content-center">
-  <div class="col-md-8">
+<div class="row justify-content-end">
+  <div class="col-md-9">
 {{ $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}
 {{ range $pages.ByPublishDate.Reverse }}
-  <div class="card mx-5">
-    <div class="card-body text-dark">
-    <a href="{{ .Permalink }}" class="text-dark"><h3>{{ .Title | markdownify }}</h3></a>
+  <div class="mx-5">
+    <a href="{{ .Permalink }}"><h3>{{ .Title | markdownify }}</h3></a>
     {{ $customDateFormat := "2 January 2006" }}
     {{ with .Site.Params.customDateFormat }}{{ $customDateFormat = . }}{{ end }}
-    <br>
     <small class="text-secondary">{{ .PublishDate.Format $customDateFormat }}</small>
-    {{ partial "tags" . }}
+    
     {{ if eq .Site.Params.showPostSummary true }}
     <br>
     {{ .Summary }}
+    <br>
+    <small class="text-muted"><i class="fas fa-tags"></i> {{ partial "tags" . }}</small>
     {{ end }}
-  </div>
   </div>
 {{ end }}
 </div>

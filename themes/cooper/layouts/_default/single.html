@@ -1,7 +1,9 @@
 {{- define "main" -}}
-
+<div class="row justify-content-center pt-md-4">
+    <div class="col-md-10">
 <h1 class="mt-5 p-name">{{ .Title | markdownify }}</h1>
-<p>By <a class="p-author h-card" href="https://marksuth.dev">Mark Sutherland</a></p>
 {{ .Content }}
+</div>
+</div>
 
 {{- end -}}

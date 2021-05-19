@@ -34,6 +34,10 @@ theme = "cooper"
   name = "Home"
   url = "/"
   weight = 1
+    [[menu.nav]]
+  name = "About"
+  url = "/about"
+  weight = 2
 
 [markup]
   defaultMarkdownHandler = "goldmark"
