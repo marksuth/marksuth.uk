@@ -7,8 +7,7 @@ title: "Hi There"
 <img src="/images/avatar.jpg" alt="Mark Sutherland" class="img-fluid">
 </div>
 <div class="col-md-8" markdown="1">
-
-I'm Mark Sutherland, a Web Developer from Leicester, and currently working at CWA Creative Agency.
+I'm Mark, a Web Developer from Leicester, and currently working at CWA Creative Agency.
 
 My interest in the web started I was a kid in the late 90s, when I got a "Build you own Website" book from the School Bookfair, resulting in a number of dodgy looking sites an.
 
@@ -18,4 +17,3 @@ If you want to get in touch for any reason, feel free to drop me an email mark@m
 
 </div>
 </div>
-
