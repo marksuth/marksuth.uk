@@ -1,7 +1,12 @@
 {{- define "main" -}}
 <div class="row justify-content-center pt-md-4">
-    <div class="col-md-10">
-<h1 class="mt-5 p-name">{{ .Title | markdownify }}</h1>
+    <div class="col-md-8">
+<h1 class="mt-3 p-name">{{ .Title | markdownify }}</h1>
+{{ $customDateFormat := "2 January 2006" }}
+{{ with .Site.Params.customDateFormat }}{{ $customDateFormat = . }}{{ end }}
+{{ if .Params.showthedate | default "true" }}
+<small class="text-secondary"><i class="fa fa-fw fa-calendar-alt"></i> {{ .PublishDate.Format $customDateFormat }} &nbsp;  {{ partial "tags" . }}</small>
+{{ end }}
 {{ .Content }}
 </div>
 </div>

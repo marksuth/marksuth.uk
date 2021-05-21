@@ -1,0 +1,6 @@
+{{ if .Params.showthedate }}
+{{ $customDateFormat := "2 January 2006" }}
+{{ with .Site.Params.customDateFormat }}{{ $customDateFormat = . }}{{ end }}
+<small class="text-secondary"><i class="fa fa-fw fa-calendar-alt"></i> {{ .PublishDate.Format $customDateFormat }}</small>
+{{ end }}
+    

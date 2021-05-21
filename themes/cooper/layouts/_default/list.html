@@ -1,14 +1,14 @@
 {{- define "main" -}}
-
+<div class="row justify-content-center pt-md-4">
+  <div class="col-md-8">
 <h1>{{ .Title }}</h1>
 
 {{ $pages := .Pages }}
 {{ range $pages.ByPublishDate.Reverse }}
   <p>
-    <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
+    <a href="{{ .Permalink }}"><h2 class="mb-0 pb-0">{{ .Title | markdownify }}</h2></a>
     {{ $customDateFormat := "January 2, 2006" }}
     {{ with .Site.Params.customDateFormat }}{{ $customDateFormat = . }}{{ end }}
-    <br>
     <small class="text-secondary">{{ .PublishDate.Format $customDateFormat }}</small>
     {{ partial "tags" . }}
     {{ if eq .Site.Params.showPostSummary true }}
@@ -17,5 +17,6 @@
     {{ end }}
   </p>
 {{ end }}
-
+</div>
+</div>
 {{- end -}}

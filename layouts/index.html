@@ -34,15 +34,14 @@
 {{ range $pages.ByPublishDate.Reverse }}
   <div class="mx-5">
     <a href="{{ .Permalink }}"><h3>{{ .Title | markdownify }}</h3></a>
-    {{ $customDateFormat := "2 January 2006" }}
-    {{ with .Site.Params.customDateFormat }}{{ $customDateFormat = . }}{{ end }}
-    <small class="text-secondary">{{ .PublishDate.Format $customDateFormat }}</small>
-    
+    {{ if .Params.showthedate }}
+    {{ partial "date" . }}
+    {{ end }}
     {{ if eq .Site.Params.showPostSummary true }}
     <br>
     {{ .Summary }}
     <br>
-    <small class="text-muted"><i class="fas fa-tags"></i> {{ partial "tags" . }}</small>
+    <small class="text-secondary"> {{ partial "tags" . }}</small>
     <hr>
     {{ end }}
   </div>

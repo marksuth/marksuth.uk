@@ -1,7 +1,8 @@
 ---
-title: "Getting Into Indieweb"
+title: "Getting Into IndieWeb"
 date: 2021-05-20T23:37:28+01:00
 draft: false
+showthedate: true
 tags:
     - indieweb
 ---

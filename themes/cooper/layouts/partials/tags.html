@@ -1,4 +1,4 @@
 {{ range .Params.tags }}
 {{ $href := print (absURL "tags/") (urlize .) }}
-<small><code><a href="{{ $href }}">{{ . }}</a></code></small>
+<small><i class="fa fa-fw fa-tag text-secondary"></i></small> <a href="{{ $href }}" class="text-secondary font-monospace">{{ . }}</a>
 {{ end }}
